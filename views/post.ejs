@@ -1,0 +1,7 @@
+<%- include("Partials/header.ejs"); -%>
+<h1><%= titleContent %></h1>
+<p><%= postContent%></p>
+<form action="/delete" method="post">
+    <button class="btn btn-danger" name="deletePost" value="<%=postId%>" type="submit">Delete Post</button>
+</form>
+<%- include("Partials/footer.ejs"); -%>

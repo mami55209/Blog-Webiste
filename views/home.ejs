@@ -1,0 +1,16 @@
+<%- include("Partials/header.ejs"); -%>
+<h1>Home</h1>
+<p><%= homeContent%></p>
+<%postsArr.forEach((post)=>{%>
+    <h1><%=post.title%></h1>
+    <p>
+        <%=post.post.substring(0, 100) +"..."%>
+        <a href="posts/<%=post.title%>">Read More</a>
+        <form action="/delete" method="post">
+            <button class="btn btn-danger" name="deletePost" value="<%=post._id%>" type="submit">Delete Post</button>
+        </form>
+    </p>
+    
+<%})%>
+
+<%- include("Partials/footer.ejs"); -%>
